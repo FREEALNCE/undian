@@ -1,0 +1,1644 @@
+@import url("https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Gantari", sans-serif;
+    font-weight: 900;
+}
+
+p, span {
+    font-family: "Gantari", sans-serif;
+    font-weight: 600;
+}
+
+.mobile-sm {
+    display: none;
+}
+
+/* Global CSS */
+
+.title-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.arrow i {
+    font-size: 35px;
+    background: #ffffff;
+    box-shadow: 0 0 5px #888888;
+    border-radius: 50px;
+    margin-top: 2px;
+}
+
+#whyus,
+#sub-company,
+#contact-us,
+#partnership,
+#syarat,
+#gallery,
+#award,
+#contact {
+    padding: 90px 0px;
+}
+
+.desktop {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+.contact-wa {
+    display: inline-block;
+}
+
+/* End Global CSS */
+
+/* Header Section */
+header {
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+header .img-box {
+    width: 100%;
+    text-align: center;
+}
+
+header .img-box img {
+    width: 9%;
+    text-align: center;
+}
+/* End Header Section */
+
+/* Banner Section */
+#banner .wrapper {
+    background-image: url(/images/banner.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+#banner .wrapper .card {
+    margin: auto;
+    border: none;
+    text-align: left;
+    width: 100%;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+#banner .wrapper .box {
+    display: flex;
+}
+
+#banner .wrapper .left-side {
+    width: 50%;
+    padding-top: 70px;
+}
+
+#banner .wrapper .right-side {
+    width: 50%;
+    bottom: 0;
+}
+
+#banner .wrapper .right-side img {
+    width: 100%;
+    bottom: 0;
+}
+
+#banner h1 {
+    line-height: 1.7em;
+    font-size: 55px;
+    padding-bottom: 10px;
+}
+
+#banner .text-box {
+    background-color: #181818;
+    color: #ffffff;
+    padding: 5px 10px;
+}
+
+#banner .wrapper .card h5 {
+    font-family: "Arial Rounded";
+}
+
+#banner a.desktop {
+    display: block;
+}
+
+#banner a.mobile {
+    display: none;
+}
+
+#banner a .contact-us {
+    font-size: 22px;
+    background-color: #0c8e2e;
+    color: #ffffff;
+    font-family: "Gantari", sans-serif;
+    font-weight: 600;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: 0.4s;
+}
+
+#banner a:hover {
+    transform: scale(1.1);
+}
+
+#banner a .contact-us i {
+    font-size: 40px;
+    background-color: #0c8e2e;
+    color: #ffffff;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+/* End Banner Section */
+
+/* WhyUs Section */
+#whyus {
+    background-color: #ffffff;
+    padding: 0px 0px 150px 0px;
+}
+
+#whyus .wrapper {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 30px;
+    margin-top: 80px;
+}
+
+#whyus .offer {
+    padding-bottom: 50px;
+}
+
+#whyus .why-mitra {
+    padding-top: 70px;
+}
+
+#whyus .wrapper .card {
+    padding: 20px 0px;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #888888;
+    height: 270px;
+    transition: 0.4s;
+}
+
+
+#whyus .wrapper .card:hover i.bx.bxs-chevron-down {
+    transform: rotate(-180deg);
+    transition: 0.7s;
+}
+
+#whyus .wrapper .card-body {
+    padding: 0px;
+}
+
+#whyus .wrapper .card h4.bottom-pad {
+    padding: 15px 20px 10px 20px;
+}
+
+#whyus h1 {
+    margin-bottom: 50px;
+}
+
+#whyus .text-box {
+    background-color: #181818;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+#whyus .wrapper .card h4 {
+    color: #888888;
+    padding: 0px 20px;
+}
+
+#whyus .wrapper > .card {
+    grid-column: span 2;
+}
+
+#whyus .wrapper .card .popup-text {
+    padding: 20px 20px 10px 20px;
+    margin-top: 10px;
+    background-color: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.1s;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #888888;
+}
+
+#whyus .wrapper .card:hover .popup-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+#whyus .wrapper .card img {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+/* End WhyUs Section */
+
+/* Sub-Company Section */
+
+#sub-company {
+    background-color: #f7f7f7;
+}
+
+#sub-company .box {
+    display: flex;
+}
+
+#sub-company .left-side {
+    width: 40%;
+    padding-top: 70px;
+}
+
+#sub-company .right-side {
+    width: 60%;
+}
+
+#sub-company .left-side img {
+    width: 80%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#sub-company h1 {
+    line-height: 1.7em;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+#sub-company .right-side .text-box {
+    background-color: #181818;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+#sub-company .wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+}
+
+#sub-company .wrapper .card {
+    text-align: left;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    border: none;
+}
+
+#sub-company .wrapper .card .city-store {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: "Gantari", sans-serif;
+    font-weight: 600;
+}
+
+#sub-company .wrapper .card .city-store i {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 32px;
+    padding-bottom: 5px;
+}
+
+#sub-company .wrapper > .card {
+    grid-column: span 2;
+}
+
+#sub-company .box-wrappper {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    width: 100%;
+    column-gap: 20px;
+    margin-top: 50px;
+}
+
+#sub-company .box-wrappper .mitra-box {
+    grid-column: span 2;
+    box-shadow: 0 0 10px #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #fff;
+}
+
+#sub-company .box-wrappper .mitra-box img {
+    width: 100%;
+    object-fit: cover;
+    height: 270px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+#sub-company .box-wrappper .mitra-box p {
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+#sub-company .box-wrappper .mitra-box a {
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    transition: all 0.5s ease;
+    font-weight: 500;
+}
+
+#sub-company .box-wrappper .mitra-box a:hover {
+    letter-spacing: 1px;
+    transition: all 0.5s ease;
+}
+
+.btn-more {
+    width: 100%;
+    text-align: center;
+    padding: 50px 0px 0px 0px;
+}
+
+.btn-more .btn-selengkapnya {
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.btn-more .btn-selengkapnya:hover {
+    background-color: transparent;
+    color: #000;
+    border: 1px solid #d90119;
+}
+
+.active-filter {
+    color: #d90119;
+}
+
+/* End Sub-Company Section */
+
+/* Partnership Section */
+#partnership {
+    background-color: #ffffff;
+    margin: auto;
+    text-align: center;
+}
+
+#partnership .wrapper {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 90px;
+}
+
+#partnership .wrapper .card {
+    padding: 20px 0px;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+}
+
+.mt-box {
+    margin-top: 15px;
+}
+
+.mt-box-1 {
+    margin-top: 3px;
+}
+
+
+#partnership h1 {
+    line-height: 1.7em;
+    text-align: center;
+}
+
+#partnership .text-box {
+    background-color: #181818;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+#partnership .checklist {
+    font-size: 24px;
+    text-align: left;
+    font-family: "Gantari", sans-serif;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#partnership .checklist i {
+    font-size: 55px;
+    background-color: #000;
+    border-radius: 50px;
+    margin-top: 5px;
+    text-align: center;
+    color: #fff;
+    font-family: "Arial Rounded";
+}
+#partnership .wrapper > .card {
+    grid-column: span 4;
+}
+
+#partnership a .contact-us {
+    font-size: 24px;
+    background-color: #0c8e2e;
+    color: #ffffff;
+    font-family: "Gantari", sans-serif;
+    font-weight: 600;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: 0.7s;
+}
+
+#partnership a:hover {
+    transform: scale(1.1);
+}
+
+#partnership a.mobile.part1 {
+    text-align: right;
+}
+#partnership a.mobile.part2 {
+    text-align: left;
+}
+
+#partnership a .contact-us i {
+    font-size: 40px;
+    background-color: #0c8e2e;
+    color: #ffffff;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+/* End Partnership */
+
+/* Syarat Section */
+#syarat {
+    background-color: #f7f7f7;
+}
+
+#syarat .wrapper {
+    display: flex;
+}
+
+#syarat .wrapper .left-side {
+    width: 50%;
+    text-align: center;
+}
+
+#syarat .wrapper .right-side {
+    width: 50%;
+    padding: 0px 0px 0px 0px;
+    margin: auto;
+}
+
+#syarat .wrapper .left-side img {
+    width: 70%;
+}
+
+#syarat .wrapper .right-side img {
+    width: 100%;
+}
+
+#syarat .wrapper .right-side h1 {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+#syarat .wrapper .right-side .text-box {
+    background-color: #181818;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+/* End Syarat Section */
+
+#gallery {
+    background-color: #ffffff;
+}
+
+#gallery .wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 20px;
+}
+
+#gallery h1 {
+    margin-bottom: 50px;
+    line-height: 1.9em;
+}
+
+#gallery .text-box {
+    background-color: #181818;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+#gallery .wrapper .img-box {
+    grid-column: span 2;
+}
+
+#gallery .wrapper .img-box img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.img-box-gal {
+    display: none;
+}
+/* End Gallery */
+
+/* Award Section */
+#award {
+    background-color: #f7f7f7;
+}
+
+#award .wrapper {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 20px;
+}
+
+#award .wrapper .award-box {
+    grid-column: span 2;
+    text-align: center;
+}
+
+#award h1 {
+    margin-bottom: 20px;
+    line-height: 1.9em;
+}
+
+#award p {
+    margin-bottom: 50px;
+    line-height: 1.9em;
+    font-size: 18px;
+    font-family: "Gantari", sans-serif;
+    font-weight: 600;
+}
+
+#award .text-box {
+    background-color: #181818;
+    color: #ffffff;
+    padding: 5px 10px;
+}
+
+#award .wrapper .award-box img {
+    width: 70%;
+}
+/* End Award Section */
+
+/* Contact Us Section */
+#contact {
+    background-color: #ffffff;
+    text-align: center;
+}
+
+#contact h1 {
+    margin-bottom: 20px;
+    line-height: 1.9em;
+}
+
+#contact p {
+    margin-bottom: 50px;
+    line-height: 1.9em;
+    font-size: 18px;
+    font-family: "Gantari", sans-serif;
+    font-weight: 600;
+}
+
+#contact .text-box {
+    background-color: #181818;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+#contact .form-box {
+    padding: 0px 350px;
+}
+
+#contact .form-control {
+    font-size: 16px;
+    font-family: "Century Gothic";
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    color: #000000;
+    border: none;
+    box-shadow: inset 0 0 5px #c3c3c3;
+    height: 45px;
+}
+
+#contact .form-control::placeholder {
+    color: #888888;
+}
+
+#contact textarea::placeholder {
+    color: #888888;
+}
+
+#contact textarea {
+    font-size: 16px;
+    font-family: "Century Gothic";
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    color: #000000;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    box-shadow: inset 0 0 5px #c3c3c3;
+}
+
+#contact .btn-form {
+    width: 100%;
+    border: none;
+    padding: 10px 0px;
+    border-radius: 50px;
+    font-family: "Gantari", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #181818;
+}
+
+/* End Contact Us */
+
+.modal-sm {
+    max-width: 500px;
+}
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-content img {
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.modal.show .modal-dialog {
+    transform: translate(0, 120px);
+}
+/* Media Queries */
+
+@media (max-width: 1440px) {
+    #banner .wrapper {
+        height: 80vh;
+    }
+}
+@media (max-width: 1366px) {
+}
+
+@media (max-width: 1280px) {
+    #banner a .contact-us {
+        font-size: 20px;
+    }
+    #whyus .wrapper .card {
+        height: 300px;
+    }
+    #banner .wrapper {
+        height: 90vh;
+    }
+    #whyus .wrapper .card h4.space-padding {
+        padding: 20px 20px 0px 20px;
+    }
+    #sub-company .left-side {
+        padding-top: 120px;
+        width: 35%;
+    }
+
+    #sub-company .right-side {
+        width: 65%;
+    }
+    #whyus .wrapper .card h4.top-padding {
+        padding-top: 0px;
+    }
+
+    #whyus .wrapper .card h4.bottom-pad {
+        padding: 40px 20px 10px 20px;
+    }
+
+    #sub-company .wrapper {
+        column-gap: 20px;
+    }
+    #syarat .wrapper .right-side {
+        width: 50%;
+        padding: 0px 0px 0px 0px;
+    }
+
+    #syarat .wrapper .left-side {
+        padding-top: 10px;
+    }
+}
+
+@media (max-width: 1200px) {
+    #sub-company .box-wrappper {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    #banner .wrapper {
+        height: 78vh;
+    }
+    #whyus .wrapper .card h4.top-padding {
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    #banner h1 {
+        font-size: 45px;
+    }
+    #sub-company h1 {
+        line-height: 1.7em;
+        padding-bottom: 10px;
+        font-size: 32px;
+        text-align: left;
+    }
+
+    #banner a .contact-us {
+        font-size: 16px;
+    }
+
+    #banner a .contact-us i {
+        font-size: 25px;
+    }
+
+    #sub-company .wrapper .card .city-store {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 24px;
+        margin-bottom: 10px;
+        font-family: "Gantari", sans-serif;
+    font-weight: 600;
+    }
+    #sub-company .box-wrappper {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    #sub-company .left-side {
+        padding-top: 0px;
+        width: 35%;
+    }
+    #sub-company .left-side img {
+        width: 100%;
+    }
+
+    #syarat .wrapper .left-side {
+        padding-top: 0px;
+    }
+
+    #partnership .wrapper {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        column-gap: 30px;
+    }
+
+    #whyus .wrapper > .card {
+        grid-column: span 4;
+        margin-bottom: 30px;
+    }
+
+    #whyus .wrapper .card img {
+        width: 35%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    #whyus .wrapper .card h4.space-padding {
+        padding: 0px 0px 0px 0px;
+    }
+
+    #syarat .wrapper .right-side {
+        width: 50%;
+        padding: 0px 0px 0px 0px;
+    }
+
+    #contact .form-box {
+        padding: 0px 200px;
+    }
+
+    #whyus .wrapper .card h4.bottom-pad {
+        padding: 20px 20px 10px 20px;
+    }
+    .text-box {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 992px) {
+    #banner .wrapper {
+        height: 40vh;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .desktop {
+        display: none;
+    }
+    .offer h1 {
+        font-size: 42px;
+        color: #000;
+    }
+    #whyus .text-box {
+        line-height: 5.5rem;
+    }
+    #whyus hr {
+        margin-bottom: 50px;
+    }
+    #whyus .wrapper .card img {
+        width: 45%;
+    }
+    #whyus .wrapper .card h4.space-padding {
+        padding: 5px 0px 0px 0px;
+    }
+    #sub-company .box {
+        display: block;
+    }
+    #sub-company .left-side {
+        width: 100%;
+        text-align: center;
+    }
+    #sub-company .left-side img {
+        width: 60%;
+    }
+    #sub-company .right-side {
+        width: 100%;
+        margin-top: 40px;
+        
+    }
+    #sub-company .right-side h1 {
+        text-align: center;
+    }
+    #sub-company h1 {
+        line-height: 2.5em;
+    }
+    #sub-company .box-wrappper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    #partnership .wrapper > .card {
+        grid-column: span 8;
+    }
+    .col-md-2 {
+        width: 10.666667%;
+    }
+    #partnership .col-10 {
+        font-size: 28px;
+    }
+    #partnership h1 {
+        line-height: 2.5em;
+        text-align: center;
+    }
+    #partnership a.mobile.part1 {
+        text-align: center;
+    }
+    #syarat .wrapper {
+        display: block;
+    }
+    #syarat .wrapper .left-side {
+        width: 100%;
+    }
+    #syarat .wrapper .left-side img {
+        width: 60%;
+    }
+    #syarat .wrapper .right-side {
+        width: 100%;
+        text-align: center;
+        margin-top: 40px;
+    }
+    #sub-company .wrapper .card .city-store {
+        font-size: 28px;
+    }
+    #sub-company .box-wrappper .mitra-box p {
+        font-size: 20px;
+    }
+    #syarat .wrapper .right-side h1 {
+        text-align: center;
+        margin-bottom: 0px;
+        line-height: 2.5em;
+    }
+    #syarat .wrapper .right-side h4 {
+        text-align: left;
+        font-size: 28px;
+    }
+    #syarat .wrapper .left-side {
+        padding-top: 0px;
+    }
+    #gallery h1 {
+        margin-bottom: 50px;
+        line-height: 2.5em;
+    }
+    #contact h1 {
+        margin-bottom: 30px;
+        line-height: 2.5em;
+    }
+    #contact p {
+        margin-bottom: 50px;
+        line-height: 1.9em;
+        font-size: 28px;
+        font-family: "Gantari", sans-serif;
+        font-weight: 600;
+    }
+    #contact .form-box {
+        padding: 0px 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+    #banner .wrapper {
+        padding-top: 70px;
+    }
+    #banner .wrapper .box {
+        display: block;
+    }
+    #banner .wrapper .left-side {
+        width: 100%;
+    }
+    #banner .wrapper .right-side {
+        width: 100%;
+    }
+    header .img-box img {
+        width: 20%;
+        text-align: center;
+    }
+    #banner .wrapper {
+        background-image: url(/images/banner.jpg);
+    }
+
+    #banner h1 {
+        text-align: center;
+        font-size: 50px;
+        padding-bottom: 100px;
+    }
+
+    #banner a.desktop {
+        display: none;
+    }
+
+    #banner a.mobile {
+        display: block;
+        bottom: 0;
+    }
+    #banner .right-side .btn-float {
+        position: absolute;
+        margin-top: -150px;
+        color: white;
+        font-size: 16px;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
+        width: 100%;
+    }
+
+    #banner a .contact-us {
+        font-size: 27px;
+        background-color: #0c8e2e;
+        color: #ffffff;
+        font-family: "Gantari", sans-serif;
+    font-weight: 600;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 5px 30px;
+        border-radius: 50px;
+        transition: 0.4s;
+        text-align: center;
+    }
+
+    #sub-company h1 {
+        line-height: 1.9em;
+    }
+    #whyus {
+        padding: 0px 0px 70px 0px !important;
+    }
+    #whyus h1 {
+        line-height: 1.3em;
+    }
+    
+
+    #partnership h1 {
+        line-height: 2.2em;
+    }
+
+    #whyus .wrapper .card {
+        height: 305px;
+    }
+
+    #sub-company h1 {
+        line-height: 2.2em;
+    }
+
+    #whyus,
+    #sub-company,
+    #partnership,
+    #syarat,
+    #gallery,
+    #award,
+    #contact {
+        padding: 70px 0px;
+    }
+
+    #sub-company h1 {
+        padding-bottom: 10px;
+        font-size: 33.52px;
+        text-align: left;
+    }
+
+    #sub-company .box {
+        display: block;
+    }
+
+    #sub-company .left-side {
+        width: 100%;
+        padding-top: 0px;
+    }
+
+    #sub-company .right-side {
+        width: 100%;
+        text-align: center;
+    }
+
+    #sub-company .wrapper {
+        padding: 70px 90px 0px 160px;
+    }
+
+    #sub-company .wrapper > .card {
+        grid-column: span 3;
+    }
+
+    #sub-company h1 {
+        padding-bottom: 10px;
+
+        text-align: center;
+    }
+
+    #sub-company .left-side .text-box {
+        background-color: #181818;
+        color: #ffffff;
+        padding: 5px 10px;
+        text-align: left;
+    }
+
+    #sub-company .right-side img {
+        width: 50%;
+    }
+
+    #partnership .wrapper {
+        padding: 0px 50px 0px 50px;
+    }
+
+    #partnership .wrapper > .card {
+        grid-column: span 8;
+    }
+
+    #partnership .checklist i {
+        font-size: 35px;
+        margin-top: 10px;
+        float: right;
+    }
+
+    #banner .wrapper .left-side {
+        padding-top: 0px;
+    }
+
+    #syarat .wrapper {
+        display: block;
+    }
+
+    #syarat .wrapper .right-side h1 {
+        text-align: center;
+        line-height: 2.2em;
+    }
+
+    #syarat .wrapper .left-side {
+        width: 100%;
+        padding-top: 0px;
+    }
+
+    #syarat .wrapper .right-side {
+        width: 100%;
+        text-align: left;
+        padding-top: 70px;
+    }
+
+    #syarat .wrapper .right-side .row {
+        padding: 0px 70px;
+    }
+
+    #syarat .wrapper .left-side img {
+        width: 50%;
+    }
+
+    #gallery .wrapper .img-box {
+        grid-column: span 4;
+    }
+
+    #award .wrapper .award-box {
+        grid-column: span 4;
+    }
+
+    #contact .form-box {
+        padding: 0px 80px;
+    }
+
+    #contact p {
+        margin-bottom: 30px;
+        line-height: 1.9em;
+        font-size: 28px;
+        font-family: "Gantari", sans-serif;
+        font-weight: 600;
+    }
+    #gallery .wrapper .img-box {
+        grid-column: span 3;
+    }
+}
+
+@media (max-width: 600px) {
+    header .img-box img {
+        text-align: center;
+        width: 30%;
+    }
+    #banner .wrapper {
+        height: 30vh;
+    }
+    .offer h1 {
+        font-size: 24px;
+        color: #000;
+    }
+    .text-box {
+        font-size: 28px;
+    }
+    #whyus .text-box {
+        line-height: 4.5rem;
+        margin-bottom: 0px;
+    }
+    #whyus .wrapper .card {
+        height: 275px;
+        margin: 0px 0px 20px 0px;
+    }
+    #whyus h1 {
+        margin-bottom: 25px;
+    }
+    #sub-company .left-side img {
+        width: 80%;
+    }
+    #sub-company .box-wrappper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #sub-company .wrapper {
+        padding: 30px 0px 0px 0px;
+    }
+    .mobile-sm {
+        display: block;
+    }
+
+    #partnership .title-header.mobile {
+        display: none;
+    }
+    #partnership .col-10 {
+        font-size: 22px;
+    }
+    #partnership .wrapper {
+        padding: 0px 20px 0px 20px;
+    }
+    #syarat .wrapper .right-side {
+        width: 100%;
+        text-align: left;
+        padding-top: 0px;
+    }
+    #syarat .wrapper .right-side h4 {
+        text-align: left;
+        font-size: 22px;
+        font-weight: 700;
+    }
+    #gallery .title-header.mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 414px) {
+    header {
+        background-color: #ffffff;
+        padding: 20px;
+    }
+    #banner .wrapper {
+        padding-top: 50px;
+    }
+    #banner h1 {
+        text-align: center;
+        padding-bottom: 30px;
+        font-size: 30px;
+    }
+
+    #banner .right-side a.mobile {
+        top: 87%;
+    }
+
+    #banner a.mobile .contact-us {
+        font-size: 18px;
+    }
+
+    #banner .mobile .contact-us i {
+        font-size: 30px;
+        margin-top: -5px;
+    }
+
+    #banner .right-side .btn-float {
+        position: absolute;
+        color: white;
+        margin-top: -120px;
+        font-size: 16px;
+        padding: 12px 24px;
+        border: none;
+        display: block;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: left;
+        width: 100%;
+    }
+
+    #banner .right-side a.mobile {
+        width: 100%;
+    }
+
+    #banner .right-side a.mobile.part1 {
+        text-align: center;
+    }
+    #banner .right-side a.mobile.part2 {
+        text-align: center;
+    }
+
+    #whyus .wrapper > .card {
+        grid-column: span 8;
+        margin-bottom: 30px;
+    }
+
+    #whyus .wrapper {
+        padding: 0px 30px;
+    }
+
+    #sub-company h1 {
+        text-align: center;
+    }
+    #sub-company .wrapper {
+        padding: 30px 0px 0px 30px;
+    }
+
+    #sub-company .wrapper .card .city-store {
+        font-size: 18px;
+    }
+
+    #banner a.mobile .contact-us i {
+        font-size: 30px;
+        margin-top: 0px;
+    }
+
+    #whyus h1 {
+        text-align: center;
+    }
+
+    #partnership h1 {
+        text-align: center;
+    }
+    #partnership .checklist {
+        font-size: 18px;
+        text-align: left;
+        font-family: "Gantari", sans-serif;
+    font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    #partnership .checklist i {
+        font-size: 35px;
+        background-color: #ae862e;
+        border-radius: 50px;
+        margin-top: 5px;
+        text-align: center;
+        font-family: "Arial Rounded";
+    }
+
+    #partnership h1 {
+        padding-bottom: 0px;
+    }
+
+    #partnership a .contact-us {
+        font-size: 16px;
+    }
+
+    #partnership a .contact-us i {
+        font-size: 25px;
+    }
+
+    #partnership a.mobile.part1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    #partnership a.mobile.part2 {
+        text-align: center;
+    }
+
+    #sub-company h1 {
+        font-size: 28.21px;
+    }
+
+    #sub-company .right-side img {
+        width: 80%;
+    }
+
+    #syarat .wrapper .left-side img {
+        width: 80%;
+    }
+
+    #syarat .wrapper .right-side .row {
+        padding: 0px 0px 0px 10px;
+    }
+
+    #syarat .wrapper .right-side img {
+        width: 80%;
+    }
+
+    #syarat h4 {
+        font-size: 18px;
+    }
+
+    #gallery .wrapper .img-box {
+        grid-column: span 8;
+    }
+
+    #gallery .wrapper .img-box {
+        margin-bottom: 20px;
+    }
+
+    #contact .form-box {
+        padding: 0px 0px;
+    }
+}
+
+@media (max-width: 411px) {
+    #banner .right-side a.mobile {
+        top: 80%;
+    }
+    #banner a.mobile .contact-us i {
+        font-size: 30px;
+        margin-top: -5px;
+    }
+    #partnership a.mobile .contact-us {
+        font-size: 18px;
+    }
+
+    #partnership a.mobile .contact-us i {
+        font-size: 30px;
+        margin-top: -5px;
+    }
+}
+
+@media (max-width: 375px) {
+    header {
+        background-color: #ffffff;
+        padding: 20px;
+    }
+    #banner .wrapper {
+        padding-top: 50px;
+    }
+    #banner h1 {
+        text-align: center;
+        padding-bottom: 30px;
+        line-height: 1.9em;
+    }
+
+    #banner a.mobile .contact-us {
+        font-size: 18px;
+    }
+
+    #banner a.mobile .contact-us i {
+        font-size: 30px;
+        margin-top: -5px;
+    }
+
+    #banner h1 {
+        text-align: center;
+        padding-bottom: 30px;
+        line-height: 1.9em;
+    }
+
+    #whyus .wrapper {
+        padding: 0px 10px;
+    }
+
+    #whyus .wrapper .card {
+        height: 295px;
+        margin: 20px 0px;
+    }
+
+    #banner a.mobile .contact-us {
+        font-size: 18px;
+    }
+
+    #banner a.mobile .contact-us i {
+        font-size: 30px;
+        margin-top: -5px;
+    }
+
+    #partnership a.mobile .contact-us {
+        font-size: 18px;
+    }
+
+    #partnership a.mobile .contact-us i {
+        font-size: 30px;
+        margin-top: -5px;
+    }
+
+    #sub-company .wrapper {
+        padding: 30px 0px 0px 10px;
+    }
+
+    #contact-us img {
+        width: 70%;
+        margin: auto;
+    }
+    #partnership .wrapper {
+        padding: 0px 0px 0px 20px;
+    }
+    #sub-company h1 {
+        line-height: 2em;
+    }
+    #partnership h1 {
+        line-height: 2.5em;
+    }
+    #syarat .wrapper .right-side h1 {
+        text-align: center;
+        line-height: 2.6em;
+    }
+    .modal.show .modal-dialog {
+        transform: translate(0, 5px);
+    }
+}
+
+@media (max-width: 360px) {
+    header {
+        background-color: #ffffff;
+        padding: 20px;
+    }
+
+    #banner h1 {
+        text-align: center;
+        padding-bottom: 30px;
+        line-height: 1.9em;
+        font-size: 40px;
+    }
+
+    #banner .right-side .btn-float {
+        margin-top: -120px;
+    }
+    #whyus h1 {
+        text-align: center;
+    }
+
+    .text-box {
+        font-size: 24px;
+    }
+
+    #whyus .wrapper .card h4.space-padding {
+        padding: 20px 0px 0px 0px;
+    }
+    #banner h1 {
+        line-height: 1.9em;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    #whyus h1 {
+        line-height: 1.5em;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    #sub-company h1 {
+        line-height: 1.9em;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    #partnership h1 {
+        line-height: 2.5em;
+        text-align: center;
+        font-size: 24px;
+    }
+    #sub-company h1 {
+        text-align: center;
+    }
+
+    #contact-us img {
+        width: 70%;
+        margin: auto;
+    }
+
+    #whyus .wrapper .card h4.bottom-pad {
+        padding: 40px 20px 10px 20px;
+    }
+}
+
+@media (max-width: 320px) {
+    #sub-company .wrapper .card .city-store {
+        font-size: 16px;
+    }
+    #sub-company .wrapper {
+        padding: 30px 0px 0px 0px;
+    }
+
+    #banner h1 {
+        line-height: 1.9em;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    #whyus h1 {
+        line-height: 1.9em;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    #whyus .wrapper {
+        padding: 0px 20px;
+    }
+
+    #whyus .wrapper .card {
+        height: 220px;
+    }
+
+    #sub-company h1 {
+        line-height: 1.9em;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    #partnership h1 {
+        line-height: 1.9em;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    #partnership .checklist {
+        font-size: 16px;
+        text-align: left;
+        font-family: "Gantari", sans-serif;
+    font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    #banner a.mobile .contact-us {
+        font-size: 16px;
+    }
+
+    #banner a.mobile .contact-us i {
+        font-size: 25px;
+        margin-top: -5px;
+    }
+
+    #whyus .wrapper .card h4.bottom-pad {
+        padding: 30px 20px 10px 20px;
+    }
+}
+/* End Media Queries */
