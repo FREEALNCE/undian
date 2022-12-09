@@ -216,26 +216,122 @@
 
 @push('javascript-internal')
 <script>
-    var timer = new Date("Dec 30, 2022 12:00:00");
-    document.getElementById("timer").innerHTML = timer.toLocaleString([], { timeStyle: 'short' });
 
-    $(document).ready(function() {
+    //FUNGSI COUNTDOWN
+    function siangTimeCountdown(data){
+        date = data.tanggal
+
+        time = data.time
+
+        // Mengatur waktu akhir perhitungan mundur
+        var countDownDate = new Date(date+' '+time).getTime();
+
+        var timer = new Date(date+' '+time);
+        document.getElementById("timer").innerHTML = timer.toLocaleString();
+
         $('.flipTimer').flipTimer({
             direction:'down',
             date:timer,
             days:false,
         });
-    });
+ 
+        // Memperbarui hitungan mundur setiap 1 detik
+        var x = setInterval(function() {
+        
+        // Untuk mendapatkan tanggal dan waktu hari ini
+        var now = new Date().getTime();
+            
+        // Temukan jarak antara sekarang dan tanggal hitung mundur
+        var distance = countDownDate - now;
+            
+        // Perhitungan waktu untuk hari, jam, menit dan detik
+        var days    = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours   = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+         // Jika hitungan mundur selesai, tulis beberapa teks 
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = data.waktu;
+        }
+        }, 1000);
+    }
 
-    var timer2 = new Date("Dec 30, 2022 19:00:00");
-    document.getElementById("timer2").innerHTML = timer2.toLocaleString([], { timeStyle: 'short' });
+    async function getApiSiang(){
 
-    $(document).ready(function() {
+        let url = 'http://127.0.0.1:8000/api/setting/siang';
+
+        let response = await fetch(url);
+
+        let data = await response.json()
+
+        if (data.status == "success") {
+
+            siangTimeCountdown(data.data)
+        }
+    }
+
+    getApiSiang()
+</script>
+
+
+<script>
+        //FUNGSI COUNTDOWN
+        function malamTimeCountdown(data){
+        date = data.tanggal
+
+        time = data.time
+
+        // Mengatur waktu akhir perhitungan mundur
+        var countDownDate = new Date(date+' '+time).getTime();
+
+        var timer = new Date(date+' '+time);
+        document.getElementById("timer2").innerHTML = timer.toLocaleString();
+
         $('.flipTimer2').flipTimer({
             direction:'down',
-            date:timer2,
-            days: false
+            date:timer,
+            days:false,
         });
-    });
+ 
+        // Memperbarui hitungan mundur setiap 1 detik
+        var x = setInterval(function() {
+        
+        // Untuk mendapatkan tanggal dan waktu hari ini
+        var now = new Date().getTime();
+            
+        // Temukan jarak antara sekarang dan tanggal hitung mundur
+        var distance = countDownDate - now;
+            
+        // Perhitungan waktu untuk hari, jam, menit dan detik
+        var days    = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours   = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+         // Jika hitungan mundur selesai, tulis beberapa teks 
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = data.waktu;
+        }
+        }, 1000);
+    }
+
+    async function getApiMalam(){
+
+        let url = 'http://127.0.0.1:8000/api/setting/malam';
+
+        let response = await fetch(url);
+
+        let data = await response.json()
+
+        if (data.status == "success") {
+
+            malamTimeCountdown(data.data)
+        }
+    }
+
+    getApiMalam()
 </script>
 @endpush

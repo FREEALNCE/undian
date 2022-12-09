@@ -54,6 +54,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
 
     // Day Route
     Route::get('/days', [App\Http\Controllers\DaysController::class,'index'])->name('days.index');
+    Route::get('/days/show', [App\Http\Controllers\DaysController::class,'index'])->name('days.show');
     Route::get('/days/create', [App\Http\Controllers\DaysController::class,'create'])->name('days.create');
     Route::get('/days/edit/{id}', [App\Http\Controllers\DaysController::class,'edit'])->name('days.edit');
     Route::post('/days/store', [App\Http\Controllers\DaysController::class,'store'])->name('days.store');
