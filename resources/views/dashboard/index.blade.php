@@ -269,10 +269,10 @@ integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0
 
             document.getElementById("result_siang").innerHTML = '';
             type_kode_siang(data.kode);
-            
+
             setTimeout(() => {
                 document.location.reload();
-            }, 3000);  
+            }, 17000);  
 
             }
     }
@@ -293,7 +293,6 @@ integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0
                 afterComplete: function(instance){
                     instance.destroy();
                     // FUNGSI CALLBACK UNTUK MELAKUKAN RESET
-                    getApiMalam()
                 }
                 });
             }
@@ -386,7 +385,7 @@ integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0
 
             setTimeout(() => {
                 document.location.reload();
-            }, 3000);     
+            }, 17000);     
 
         }
         
