@@ -52,6 +52,7 @@ class NightsController extends Controller
 
         Night::create([
             'kode_malam' => $kode,
+            'tanggal'    => $request->tanggal,
             'status' => ($request->is_active) ? '1' : '0',
         ]);
 

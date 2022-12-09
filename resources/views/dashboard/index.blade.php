@@ -86,7 +86,7 @@
                         PUTARAN SIANG
                     </div>
                     <div class="col-6 side-right">
-                        <span>18/10/2022 12.00.00</span>
+                        <span id="tanggal_siang"></span>
                     </div>
                 </div>
             </div>
@@ -137,7 +137,7 @@
                         PUTARAN MALAM
                     </div>
                     <div class="col-6 side-right">
-                        <span>18/10/2022 19.00.00</span>
+                        <span id="tanggal_malam"></span>
                     </div>
                 </div>
             </div>
@@ -171,6 +171,18 @@ integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0
 
 
 <script>
+    function type_kode_siang(kode){
+            var instance =   new TypeIt('#result_siang', {
+                strings: kode,
+                speed: 3000,
+                autoStart: true,
+                afterComplete: function(instance){
+                    instance.destroy();
+                    // FUNGSI CALLBACK UNTUK MELAKUKAN RESET
+                    
+                }
+                });
+            }
 
     //FUNGSI COUNTDOWN
     function siangTimeCountdown(data){
@@ -207,8 +219,10 @@ integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0
             
          // Jika hitungan mundur selesai, tulis beberapa teks 
         if (distance < 0) {
+            // clearInterval(x);
             clearInterval(x);
-            document.getElementById("demo").innerHTML = data.waktu;
+            updateKodeSiang()
+
         }
         }, 1000);
     }
@@ -227,11 +241,62 @@ integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0
         }
     }
 
+    async function setKodeSiang(){
+
+        let url = 'http://127.0.0.1:8000/api/kode/siang';
+
+        let response = await fetch(url);
+
+        let data = await response.json()
+
+        if (data.status == "success") {
+
+            document.getElementById("result_siang").innerHTML = data.data.kode;
+            document.getElementById("tanggal_siang").innerHTML = data.data.date
+            
+        }
+    }
+
+    async function updateKodeSiang(){
+
+        let url = 'http://127.0.0.1:8000/api/kode/update/siang';
+
+        let response = await fetch(url);
+
+        let data = await response.json();
+
+        if (data.status == "success") {
+
+            document.getElementById("result_siang").innerHTML = '';
+            type_kode_siang(data.kode);
+            
+            setTimeout(() => {
+                document.location.reload();
+            }, 3000);  
+
+            }
+    }
+    updateKodeSiang()
+    setKodeSiang()
+
     getApiSiang()
 </script>
 
 
 <script>
+
+        function type_kode_malam(kode){
+            var instance =   new TypeIt('#result_malam', {
+                strings: kode,
+                speed: 3000,
+                autoStart: true,
+                afterComplete: function(instance){
+                    instance.destroy();
+                    // FUNGSI CALLBACK UNTUK MELAKUKAN RESET
+                    getApiMalam()
+                }
+                });
+            }
         //FUNGSI COUNTDOWN
         function malamTimeCountdown(data){
         date = data.tanggal
@@ -267,8 +332,10 @@ integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0
             
          // Jika hitungan mundur selesai, tulis beberapa teks 
         if (distance < 0) {
+            // 
             clearInterval(x);
-            document.getElementById("demo").innerHTML = data.waktu;
+            updateKodeMalam()
+
         }
         }, 1000);
     }
@@ -287,6 +354,46 @@ integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0
         }
     }
 
+    async function setKodeMalam(){
+
+        let url = 'http://127.0.0.1:8000/api/kode/malam';
+
+        let response = await fetch(url);
+
+        let data = await response.json()
+
+        if (data.status == "success") {
+            document.getElementById("result_malam").innerHTML = data.data.kode;
+            document.getElementById("tanggal_malam").innerHTML = data.data.date
+            
+        }
+    }
+
+    async function updateKodeMalam(){
+
+        let url = 'http://127.0.0.1:8000/api/kode/update/malam';
+
+        let response = await fetch(url);
+
+        let data = await response.json();
+
+        console.log(data.status)
+        if (data.status == "success") {
+
+            document.getElementById("result_malam").innerHTML ='';
+
+            type_kode_malam(data.kode);   
+
+            setTimeout(() => {
+                document.location.reload();
+            }, 3000);     
+
+        }
+        
+    }
+    updateKodeMalam()
+
+    setKodeMalam()
     getApiMalam()
 </script>
 @endpush

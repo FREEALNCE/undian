@@ -11,7 +11,7 @@ class Night extends Model
     use HasFactory;
     use Blameable;
     protected $table = 'night_results';
-    protected $fillable = ['kode_malam','status','created_by','updated_by'];
+    protected $fillable = ['kode_malam','tanggal','status','created_by','updated_by'];
 
     public function scopeSearch($query, $title)
     {

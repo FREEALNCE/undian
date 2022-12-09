@@ -27,5 +27,5 @@ Route::get('setting/malam', [ApiSettingMalam::class, 'index']);
 Route::get('kode/siang', [ApiKodeSiang::class, 'index']);
 Route::get('kode/malam', [ApiKodeMalam::class, 'index']);
 
-Route::get('kode/update/{id}', [ApiKodeSiang::class, 'update']);
-Route::get('kode/update/{id}', [ApiKodeMalam::class, 'update']);
+Route::get('kode/update/siang', [ApiKodeSiang::class, 'update']);
+Route::get('kode/update/malam', [ApiKodeMalam::class, 'update']);
