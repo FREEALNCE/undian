@@ -11,7 +11,7 @@ class Day extends Model
     use HasFactory;
     use Blameable;
     protected $table = 'day_results';
-    protected $fillable = ['num_one', 'num_two', 'num_three', 'num_four', 'num_five', 'is_active'];
+    protected $fillable = ['kode_siang','status','created_by','updated_by'];
 
     public function scopeSearch($query, $title)
     {

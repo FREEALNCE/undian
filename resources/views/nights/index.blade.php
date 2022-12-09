@@ -80,15 +80,11 @@
                                             </td>
 
                                             <td style="width: 40%; font-size: 36px; font-weight: 900" class="valign-middle tx-medium tx-inverse tx-14">
-                                                {{ $night->num_one }}
-                                                {{ $night->num_two }}
-                                                {{ $night->num_three }}
-                                                {{ $night->num_four }}
-                                                {{ $night->num_five }}
+                                                {{ $night->kode_malam }}
                                             </td>
 
                                             <td style="width: 10%;" class="t-center valign-middle tx-center">
-                                                @if ($night->is_active == 1)
+                                                @if ($night->status == 1)
                                                     <span class="status-active">RUNNING</span>
                                                 @else
                                                     <span class="status-nonactive">DONE</span>
@@ -99,7 +95,7 @@
                                                 <div class="row" style="margin-left: 0px; margin-right: 0px;">
                                                     <div class="col-md-6">
                                                         @can('Partner Region Update')
-                                                            <a href="{{ route('nights.edit', ['night' => $night]) }}"
+                                                            <a href="{{ url('dashboard/nights/edit/'.$night->id) }}"
                                                                 class="btn btn-sm btn-info" role="button">
                                                                 <i class="fas fa-edit"></i>
                                                             </a>
@@ -107,15 +103,10 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         @can('Partner Region Delete')
-                                                            <form class="d-inline" role="alert"
-                                                                action="{{ route('nights.destroy', ['night' => $night]) }}"
-                                                                method="POST">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button type="submit" class="btn btn-sm btn-danger">
+                                                       
+                                                                <a href="{{ url('dashboard/nights/destroy/'.$night->id) }}" class="btn btn-sm btn-danger">
                                                                     <i class="fas fa-trash"></i>
-                                                                </button>
-                                                            </form>
+                                                                </a>
                                                         @endcan
                                                     </div>
                                                 </div>

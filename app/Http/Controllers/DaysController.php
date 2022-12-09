@@ -47,13 +47,11 @@ class DaysController extends Controller
             'num_five' => 'required|integer|min:1',
         ]);
 
+        $kode = $request->num_one.$request->num_two.$request->num_three.$request->num_four.$request->num_five;
+
         Day::create([
-            'num_one' => $request->num_one,
-            'num_two' => $request->num_two,
-            'num_three' => $request->num_three,
-            'num_four' => $request->num_four,
-            'num_five' => $request->num_five,
-            'is_active' => ($request->is_active) ? '1' : '0',
+            'kode_siang' => $kode,
+            'status' => ($request->is_active) ? '1' : '0',
         ]);
 
         Alert::success('Add Day Number', 'Add Day Number Success');
@@ -66,7 +64,7 @@ class DaysController extends Controller
      * @param  \App\Models\Day  $day
      * @return \Illuminate\Http\Response
      */
-    public function show(Day $day)
+    public function show($id)
     {
         //
     }
@@ -77,10 +75,11 @@ class DaysController extends Controller
      * @param  \App\Models\Day  $day
      * @return \Illuminate\Http\Response
      */
-    public function edit(Day $day)
+    public function edit($id)
     {
-        $statuses = $this->statuses();
-        return view('days.edit', compact('day', 'statuses'));
+        $data['row'] = Day::find($id);
+        $data['day'] = 'edit kode';
+        return view('days.edit', $data);
     }
 
     /**
@@ -90,9 +89,10 @@ class DaysController extends Controller
      * @param  \App\Models\Day  $day
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Day $day)
+    public function update(Request $request)
     {
         $request->validate([
+            'id' => 'required|integer',
             'num_one' => 'required|integer|min:1',
             'num_two' => 'required|integer|min:1',
             'num_three' => 'required|integer|min:1',
@@ -100,13 +100,11 @@ class DaysController extends Controller
             'num_five' => 'required|integer|min:1',
         ]);
 
-        $day->update([
-            'num_one' => $request->num_one,
-            'num_two' => $request->num_two,
-            'num_three' => $request->num_three,
-            'num_four' => $request->num_four,
-            'num_five' => $request->num_five,
-            'is_active' => ($request->is_active) ? '1' : '0',
+        $kode = $request->num_one.$request->num_two.$request->num_three.$request->num_four.$request->num_five;
+
+        Day::where('id',$request->id)->update([
+            'kode_siang' => $kode,
+            'status' => ($request->is_active) ? '1' : '0',
         ]);
 
         Alert::success('Update Day Number', 'Update Day Number Success');
@@ -119,10 +117,10 @@ class DaysController extends Controller
      * @param  \App\Models\Day  $day
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Day $day)
+    public function destroy($id)
     {
         try {
-            $day->delete();
+            Day::where('id',$id)->delete();
             Alert::success('Delete Day Number', 'Delete Day Number Success');
         } catch (\Throwable $th) {
             Alert::error('Delete Day Number', 'Error' . $th->getMessage());

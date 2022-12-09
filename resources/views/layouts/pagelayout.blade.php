@@ -21,7 +21,7 @@
                     @endforeach
                 </a>
                 <a href="{{ route('pages.index') }}" class="{{ set_active(['pages.index']) }}" title="LOREM IPSUM" rel="index,follow" style="font-size:12px;text-decoration:none;font-weight:600">HOME</a>
-                <a href="{{ route('pages.dayresults') }}" class="{{ set_active(['pages.dayresults']) }}" title="LOREM IPSUM" rel="index,follow" style="font-size:12px;text-decoration:none;font-weight:600">DAY RESULT</a>
+                <a href="{{ url('pages.dayresults') }}" class="{{ set_active(['pages.dayresults']) }}" title="LOREM IPSUM" rel="index,follow" style="font-size:12px;text-decoration:none;font-weight:600">DAY RESULT</a>
                 <a href="{{ route('pages.nightresults') }}" class="{{ set_active(['pages.nightresults']) }}" title="LOREM IPSUM" rel="index,follow" style="font-size:12px;text-decoration:none;font-weight:600">NIGHT RESULT</a>
                 <a href="{{ route('pages.firstpage') }}" class="{{ set_active(['pages.firstpage']) }}" title="LOREM IPSUM" rel="index,follow" style="font-size:12px;text-decoration:none;font-weight:600">FIRST PAGE</a>
                 <a href="{{ route('pages.secondpage') }}" class="{{ set_active(['pages.secondpage']) }}" title="LOREM IPSUM" rel="index,follow" style="font-size:12px;text-decoration:none;font-weight:600">SECOND PAGE</a>

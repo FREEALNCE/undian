@@ -47,13 +47,11 @@ class NightsController extends Controller
             'num_five' => 'required|integer|min:1',
         ]);
 
+        $kode = $request->num_one.$request->num_two.$request->num_three.$request->num_four.$request->num_five;
+
         Night::create([
-            'num_one' => $request->num_one,
-            'num_two' => $request->num_two,
-            'num_three' => $request->num_three,
-            'num_four' => $request->num_four,
-            'num_five' => $request->num_five,
-            'is_active' => ($request->is_active) ? '1' : '0',
+            'kode_malam' => $kode,
+            'status' => ($request->is_active) ? '1' : '0',
         ]);
 
         Alert::success('Add Night Number', 'Add Night Number Success');
@@ -66,7 +64,7 @@ class NightsController extends Controller
      * @param  \App\Models\Night  $night
      * @return \Illuminate\Http\Response
      */
-    public function show(Night $night)
+    public function show($id)
     {
         //
     }
@@ -77,10 +75,11 @@ class NightsController extends Controller
      * @param  \App\Models\Night  $night
      * @return \Illuminate\Http\Response
      */
-    public function edit(Night $night)
+    public function edit($id)
     {
-        $statuses = $this->statuses();
-        return view('nights.edit', compact('night', 'statuses'));
+        $data['row'] = Night::find($id);
+        $data['day'] = 'edit kode';
+        return view('nights.edit', $data);
     }
 
     /**
@@ -90,9 +89,10 @@ class NightsController extends Controller
      * @param  \App\Models\Night  $night
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Night $night)
+    public function update(Request $request)
     {
         $request->validate([
+            'id' => 'required|integer',
             'num_one' => 'required|integer|min:1',
             'num_two' => 'required|integer|min:1',
             'num_three' => 'required|integer|min:1',
@@ -100,15 +100,12 @@ class NightsController extends Controller
             'num_five' => 'required|integer|min:1',
         ]);
 
-        $night->update([
-            'num_one' => $request->num_one,
-            'num_two' => $request->num_two,
-            'num_three' => $request->num_three,
-            'num_four' => $request->num_four,
-            'num_five' => $request->num_five,
-            'is_active' => ($request->is_active) ? '1' : '0',
-        ]);
+        $kode = $request->num_one.$request->num_two.$request->num_three.$request->num_four.$request->num_five;
 
+        Night::where('id',$request->id)->update([
+            'kode_malam' => $kode,
+            'status' => ($request->is_active) ? '1' : '0',
+        ]);
         Alert::success('Update Night Number', 'Update Night Number Success');
         return redirect()->route('nights.index');
     }
@@ -119,10 +116,10 @@ class NightsController extends Controller
      * @param  \App\Models\Night  $night
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Night $night)
+    public function destroy($id)
     {
         try {
-            $night->delete();
+            Night::where('id',$id)->delete();
             Alert::success('Delete Night Number', 'Delete Night Number Success');
         } catch (\Throwable $th) {
             Alert::error('Delete Night Number', 'Error' . $th->getMessage());

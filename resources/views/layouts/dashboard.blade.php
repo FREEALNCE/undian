@@ -80,7 +80,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-white {{ set_active(['daytime.edit']) }}" href="{{url('/edit-day-time/1')}}">
+                    <a class="nav-link text-white {{ set_active(['daytime.edit']) }}" href="{{url('dashboard/edit-day-time/1')}}">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class='bx bxs-dashboard icon-dash'></i>
                         </div>
@@ -89,7 +89,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-white {{ set_active(['nighttime.edit']) }}" href="{{url('/edit-night-time/1')}}">
+                    <a class="nav-link text-white {{ set_active(['nighttime.edit']) }}" href="{{url('dashboard/edit-night-time/1')}}">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class='bx bxs-dashboard icon-dash'></i>
                         </div>

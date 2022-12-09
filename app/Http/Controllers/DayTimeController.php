@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DayTime;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class DayTimeController extends Controller
 {
@@ -57,8 +58,8 @@ class DayTimeController extends Controller
      */
     public function edit($id)
     {
-        $id = '1';
         $data['row'] = DayTime::find($id);
+        $data['day'] = 'setting time days';
 
         return view('time-setting.day-time',$data);
     }
@@ -74,7 +75,7 @@ class DayTimeController extends Controller
     {
         $request->validate([
             'id'         => 'required',
-            'jam_siang'       => 'required',
+            'jam_siang'  => 'required',
 
         ]);
 
@@ -82,10 +83,10 @@ class DayTimeController extends Controller
 
         if($update){
             Alert::success('Update Day Time', 'Update Day Time Success');
-            return redirect()->route('days.index');
+            return redirect()->back();
         }else{
             Alert::warning('Update Day Time', 'Update Day Time failed');
-            return redirect()->route('days.index');
+            return redirect()->back();
         }
     }
 

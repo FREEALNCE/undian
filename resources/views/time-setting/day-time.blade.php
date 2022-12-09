@@ -31,29 +31,25 @@
 @section('content')
 <div class="row">
     <div class="col-md-12 dn-table">
-        <form action="{{url('/update-day-time')}}" method="POST">
-            @method('PUT')
+        <form action="{{url('dashboard/update-day-time')}}" method="POST">
             @csrf
+            <input type="hidden" name="id" value="{{$row->id}}">
             <div class="card">
                 <div class="card-body _card-body">
                     <div class="row d-flex align-items-stretch" style="justify-content: center;">
                         <div class="col-12">
                             <label for="time" class="form-label">time</label>
-                            <input type="time" class="form-control form-control-sm" name="time" value="{{$row->time}}" id="time" required>
+                            <input type="time" class="form-control form-control-sm" name="jam_siang" value="{{$row->jam_siang}}" id="time" required>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-3 col-sm-12"></div>
-                        <div class="col-md-8 col-sm-12">
-                            <div class="float-right">
+                    <div class="row" style="margin-top:20px">
+                        <div class="col-sm-12">
                                 <a class="btn btn-outline-secondary _btn-secondary px-4" href="{{ route('dashboard.index') }}">Back</a>
                                 <button type="submit" class="btn btn-primary _btn-primary px-4">
-                                    Save
+                                    update
                                 </button>
-                            </div>
                         </div>
-                        <div class="col-md-1 col-sm-12"></div>
                     </div>
                 </div>
             </div>

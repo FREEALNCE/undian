@@ -53,14 +53,24 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
     Route::resource('/users', \App\Http\Controllers\UserController::class);
 
     // Day Route
-    Route::resource('/days', App\Http\Controllers\DaysController::class);
+    Route::get('/days', [App\Http\Controllers\DaysController::class,'index'])->name('days.index');
+    Route::get('/days/create', [App\Http\Controllers\DaysController::class,'create'])->name('days.create');
+    Route::get('/days/edit/{id}', [App\Http\Controllers\DaysController::class,'edit'])->name('days.edit');
+    Route::post('/days/store', [App\Http\Controllers\DaysController::class,'store'])->name('days.store');
+    Route::post('/days/update', [App\Http\Controllers\DaysController::class,'update'])->name('days.update');
+    Route::get('/days/destroy/{id}', [App\Http\Controllers\DaysController::class,'destroy'])->name('days.destroy');
 
     // Day Time Route
     Route::post('/update-day-time', [App\Http\Controllers\DayTimeController::class, 'update'])->name('daytime.update');
     Route::get('/edit-day-time/{id}', [App\Http\Controllers\DayTimeController::class, 'edit'])->name('daytime.edit');
 
     // Night Route
-    Route::resource('/nights', App\Http\Controllers\NightsController::class);
+    Route::get('/nights', [App\Http\Controllers\NightsController::class,'index'])->name('nights.index');
+    Route::get('/nights/create', [App\Http\Controllers\NightsController::class,'create'])->name('nights.create');
+    Route::get('/nights/edit/{id}', [App\Http\Controllers\NightsController::class,'edit'])->name('nights.edit');
+    Route::post('/nights/store', [App\Http\Controllers\NightsController::class,'store'])->name('nights.store');
+    Route::post('/nights/update', [App\Http\Controllers\NightsController::class,'update'])->name('nights.update');
+    Route::get('/nights/destroy/{id}', [App\Http\Controllers\NightsController::class,'destroy'])->name('nights.destroy');
 
     // Night Time Route
     Route::post('/update-night-time', [App\Http\Controllers\NightTimeController::class, 'update'])->name('nighttime.update');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\NightTime;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class NightTimeController extends Controller
 {
@@ -58,8 +59,9 @@ class NightTimeController extends Controller
     public function edit($id)
     {
         $data['row'] = NightTime::find($id);
+        $data['day'] = 'setting time night';
 
-        return view('time-setting/night-time',$data);
+        return view('time-setting.night-time',$data);
     }
 
     /**
@@ -77,14 +79,14 @@ class NightTimeController extends Controller
 
         ]);
 
-        $update = Night::updateTime($request);
+        $update = NightTime::updateTime($request);
 
         if($update){
             Alert::success('Update Night Time', 'Update Night Time Success');
-            return redirect()->route('nights.index');
+            return redirect()->back();
         }else{
             Alert::warning('Update Night Time', 'Update Night Time failed');
-            return redirect()->route('nights.index');
+            return redirect()->back();
         }
     }
 

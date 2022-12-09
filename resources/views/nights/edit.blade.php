@@ -5,7 +5,7 @@
     <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
             {{-- <h6 class="font-weight-bolder mb-0 text-white">Dashboard</h6> --}}
-            {{ Breadcrumbs::render('detail_night', $night) }}
+            {{-- {{ Breadcrumbs::render('detail_day', $day) }} --}}
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 logout-icon" id="navbar">
             <div class="pe-md-3 d-flex align-items-center">
@@ -31,9 +31,12 @@
 @section('content')
 <div class="row">
     <div class="col-md-12 dn-table">
-        <form action="{{ route('nights.update', ['night' => $night]) }}" method="POST">
-            @method('PUT')
+        <form action="{{url('dashboard/nights/update')}}" method="POST">
+            @php
+                $kode = str_split($row->kode_malam);
+            @endphp
             @csrf
+            <input type="hidden" name="id" value="{{$row->id}}">
             <div class="card">
                 <div class="card-body _card-body">
                     <div class="row d-flex align-items-stretch" style="justify-content: center;">
@@ -43,7 +46,7 @@
                                 <label for="input_banner_title" class="font-weight-bold">
                                     First <span class="wajib">* </span>
                                 </label>
-                                <input id="input_banner_title" value="{{ old('num_one', $night->num_one) }}" name="num_one" type="number" min="0" class="form-control num-box @error('num_one') is-invalid @enderror" placeholder="Ex: 0" />
+                                <input id="input_banner_title" value="{{ $kode[0] }}" name="num_one" type="number" min="0" class="form-control num-box @error('num_one') is-invalid @enderror" placeholder="Ex: 0" />
                                 @error('num_one')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -57,7 +60,7 @@
                                 <label for="input_banner_title" class="font-weight-bold">
                                     Second <span class="wajib">* </span>
                                 </label>
-                                <input id="input_banner_title" value="{{ old('num_two', $night->num_two) }}" name="num_two" type="number" min="0" class="form-control num-box @error('num_two') is-invalid @enderror" placeholder="Ex: 0" />
+                                <input id="input_banner_title" value="{{ $kode[1] }}" name="num_two" type="number" min="0" class="form-control num-box @error('num_two') is-invalid @enderror" placeholder="Ex: 0" />
                                 @error('num_two')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -71,7 +74,7 @@
                                 <label for="input_banner_title" class="font-weight-bold">
                                     Third <span class="wajib">* </span>
                                 </label>
-                                <input id="input_banner_title" value="{{ old('num_three', $night->num_three) }}" name="num_three" type="number" min="0" class="form-control num-box @error('num_three') is-invalid @enderror" placeholder="Ex: 0" />
+                                <input id="input_banner_title" value="{{$kode[2] }}" name="num_three" type="number" min="0" class="form-control num-box @error('num_three') is-invalid @enderror" placeholder="Ex: 0" />
                                 @error('num_three')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -85,7 +88,7 @@
                                 <label for="input_banner_title" class="font-weight-bold">
                                     Fourth <span class="wajib">* </span>
                                 </label>
-                                <input id="input_banner_title" value="{{ old('num_four', $night->num_four) }}" name="num_four" type="number" min="0" class="form-control num-box @error('num_four') is-invalid @enderror" placeholder="Ex: 0" />
+                                <input id="input_banner_title" value="{{ $kode[3] }}" name="num_four" type="number" min="0" class="form-control num-box @error('num_four') is-invalid @enderror" placeholder="Ex: 0" />
                                 @error('num_four')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -99,7 +102,7 @@
                                 <label for="input_banner_title" class="font-weight-bold">
                                     Fifth <span class="wajib">* </span>
                                 </label>
-                                <input id="input_banner_title" value="{{ old('num_five', $night->num_five) }}" name="num_five" type="number" min="0" class="form-control num-box @error('num_five') is-invalid @enderror" placeholder="Ex: 0" />
+                                <input id="input_banner_title" value="{{ $kode[4] }}" name="num_five" type="number" min="0" class="form-control num-box @error('num_five') is-invalid @enderror" placeholder="Ex: 0" />
                                 @error('num_five')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -118,7 +121,7 @@
                                 </label>
                                 <div class="form-group">
                                     <label class="switch">
-                                        <input type="checkbox" name="is_active" {{ old('is_active', $night->is_active) == 1 ? 'checked' : null }}>
+                                        <input type="checkbox" name="is_active"  @if($row->status == 1 ) checked @endif>
                                         <span class="slider-switch round"></span>
                                     </label>
                                 </div>
@@ -129,7 +132,7 @@
                         <div class="col-md-3 col-sm-12"></div>
                         <div class="col-md-8 col-sm-12">
                             <div class="float-right">
-                                <a class="btn btn-outline-secondary _btn-secondary px-4" href="{{ route('nights.index') }}">Back</a>
+                                <a class="btn btn-outline-secondary _btn-secondary px-4" href="{{ route('days.index') }}">Back</a>
                                 <button type="submit" class="btn btn-primary _btn-primary px-4">
                                     Save
                                 </button>
