@@ -16,6 +16,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserTable::class,
             PermissionTableSeeder::class,
+            DayTimeSeeder::class,
+            NightTimeSeeder::class,
         ]);
     }
 }
