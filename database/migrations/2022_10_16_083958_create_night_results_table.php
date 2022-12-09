@@ -17,7 +17,7 @@ class CreateNightResultsTable extends Migration
             $table->id();
             $table->string('kode_malam');
             $table->string('status');
-
+            $table->date('tanggal')->unique();
             $table->timestamps();
             $table->blameable();
         });

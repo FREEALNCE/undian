@@ -76,7 +76,7 @@
                                     @forelse ($nights as $night)
                                         <tr>
                                             <td style="width: 40%; font-size: 20px; font-weight: 600" class="valign-middle tx-medium tx-inverse tx-14">
-                                                {{ date('d - m - Y', strtotime($night->created_at)) }}
+                                                {{ date('d - m - Y', strtotime($night->tanggal)) }}
                                             </td>
 
                                             <td style="width: 40%; font-size: 36px; font-weight: 900" class="valign-middle tx-medium tx-inverse tx-14">

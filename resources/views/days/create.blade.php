@@ -111,6 +111,20 @@
                     <div class="row">
                         <div class="col-12" style="display: flex; justify-content: center; align-items: center;">
                             <!-- status -->
+                            <div class="form-group{{ $errors->has('tanggal') ? ' has-error' : '' }} _form-group" style="display: flex; justify-content: center; align-items: center; text-align: center;">
+                                <label for="input_post_status" class="font-weight-bold" style="margin-top: -10px; margin-right: 10px">
+                                    Tanggal
+                                </label>
+                                <div class="form-group">
+                                        <input type="date" class="form-control" name="tanggal" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12" style="display: flex; justify-content: center; align-items: center;">
+                            <!-- status -->
                             <div class="form-group{{ $errors->has('is_active') ? ' has-error' : '' }} _form-group" style="display: flex; justify-content: center; align-items: center; text-align: center;">
                                 <label for="input_post_status" class="font-weight-bold" style="margin-top: -10px; margin-right: 10px">
                                     Status

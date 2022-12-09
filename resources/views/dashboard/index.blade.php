@@ -4,6 +4,17 @@
     <link rel="stylesheet" href="{{ asset('styles/flipTimer.css') }}">
     <!-- <link rel="stylesheet" href="{{ asset('styles/normalize.css') }}" type="text/css"> -->
     <!-- <link rel="stylesheet" href="{{ asset('styles/bootstrap.min.css') }}" type="text/css"> -->
+
+    <style>
+        .result{
+            background: #0095ff;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 40px;
+            font-weight: bold;
+        }
+    </style>
 @endpush
 
 
@@ -80,11 +91,12 @@
                 </div>
             </div>
             <div class="body">
-                <img id="prize1_img1" width="65" src="{{ asset('images/balls/blue/1.png') }}" />
+                <span class="result" id="result_siang"></span>
+                {{-- <img id="prize1_img1" width="65" src="{{ asset('images/balls/blue/1.png') }}" />
                 <img id="prize1_img2" width="65" style="margin-left:-5px;" src="{{ asset('images/balls/white/1.png') }}" />
                 <img id="prize1_img3" width="65" style="margin-left:-5px;" src="{{ asset('images/balls/white/4.png') }}" />
                 <img id="prize1_img4" width="65" style="margin-left:-5px;" src="{{ asset('images/balls/white/8.png') }}" />
-                <img id="prize1_img5" width="65" style="margin-left:-5px;" src="{{ asset('images/balls/white/2.png') }}" />
+                <img id="prize1_img5" width="65" style="margin-left:-5px;" src="{{ asset('images/balls/white/2.png') }}" /> --}}
             </div>
         </div> 
 
@@ -130,11 +142,12 @@
                 </div>
             </div>
             <div class="body">
-                <img id="prize1_img1" width="65" src="{{ asset('images/balls/blue/1.png') }}" />
+                <span class="result" id="result_malam"></span>
+                {{-- <img id="prize1_img1" width="65" src="{{ asset('images/balls/blue/1.png') }}" />
                 <img id="prize1_img2" width="65" style="margin-left:-5px;" src="{{ asset('images/balls/white/1.png') }}" />
                 <img id="prize1_img3" width="65" style="margin-left:-5px;" src="{{ asset('images/balls/white/4.png') }}" />
                 <img id="prize1_img4" width="65" style="margin-left:-5px;" src="{{ asset('images/balls/white/8.png') }}" />
-                <img id="prize1_img5" width="65" style="margin-left:-5px;" src="{{ asset('images/balls/white/2.png') }}" />
+                <img id="prize1_img5" width="65" style="margin-left:-5px;" src="{{ asset('images/balls/white/2.png') }}" /> --}}
             </div>
         </div> 
     </div>

@@ -16,7 +16,7 @@ class DaysController extends Controller
      */
     public function index()
     {
-        $days = Day::orderBy('created_at', 'desc')->paginate(10);
+        $days = Day::orderBy('tanggal', 'desc')->paginate(10);
         return view('days.index', compact('days'));
     }
 
@@ -40,6 +40,7 @@ class DaysController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            "tanggal" => "required|unique:day_results,tanggal",
             'num_one' => 'required|integer|min:1',
             'num_two' => 'required|integer|min:1',
             'num_three' => 'required|integer|min:1',
@@ -51,6 +52,7 @@ class DaysController extends Controller
 
         Day::create([
             'kode_siang' => $kode,
+            'tanggal'    => $request->tanggal,
             'status' => ($request->is_active) ? '1' : '0',
         ]);
 
@@ -93,6 +95,7 @@ class DaysController extends Controller
     {
         $request->validate([
             'id' => 'required|integer',
+            "tanggal" => "required",
             'num_one' => 'required|integer|min:1',
             'num_two' => 'required|integer|min:1',
             'num_three' => 'required|integer|min:1',
@@ -102,10 +105,28 @@ class DaysController extends Controller
 
         $kode = $request->num_one.$request->num_two.$request->num_three.$request->num_four.$request->num_five;
 
-        Day::where('id',$request->id)->update([
-            'kode_siang' => $kode,
-            'status' => ($request->is_active) ? '1' : '0',
-        ]);
+        $check = Day::where('id',$request->id)->first();
+
+        if($check->tanggal == $request->tanggal)
+        {
+
+            Day::where('id',$request->id)->update([
+                'kode_siang' => $kode,
+                'tanggal'    => $request->tanggal,
+                'status' => ($request->is_active) ? '1' : '0',
+            ]);
+            
+        }else{
+            $request->validate([
+                "tanggal" => "required|unique:day_results,tanggal",
+            ]);
+
+            Day::where('id',$request->id)->update([
+                'kode_siang' => $kode,
+                'tanggal'    => $request->tanggal,
+                'status' => ($request->is_active) ? '1' : '0',
+            ]);
+        }   
 
         Alert::success('Update Day Number', 'Update Day Number Success');
         return redirect()->route('days.index');

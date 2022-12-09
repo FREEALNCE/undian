@@ -17,7 +17,7 @@ class CreateDayResultsTable extends Migration
             $table->id();
             $table->string('kode_siang');
             $table->string('status');
-
+            $table->date('tanggal')->unique();
             $table->timestamps();
             $table->blameable();
         });
