@@ -229,7 +229,7 @@ integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0
 
     async function getApiSiang(){
 
-        let url = 'http://127.0.0.1:8000/api/setting/siang';
+        let url = "{{url('api/setting/siang')}}";
 
         let response = await fetch(url);
 
@@ -243,7 +243,7 @@ integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0
 
     async function setKodeSiang(){
 
-        let url = 'http://127.0.0.1:8000/api/kode/siang';
+        let url = "{{url('api/kode/siang')}}";
 
         let response = await fetch(url);
 
@@ -259,7 +259,7 @@ integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0
 
     async function updateKodeSiang(){
 
-        let url = 'http://127.0.0.1:8000/api/kode/update/siang';
+        let url = "{{url('api/kode/update/siang')}}";
 
         let response = await fetch(url);
 
@@ -341,7 +341,7 @@ integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0
 
     async function getApiMalam(){
 
-        let url = 'http://127.0.0.1:8000/api/setting/malam';
+        let url = "{{url('api/setting/malam')}}";
 
         let response = await fetch(url);
 
@@ -354,8 +354,8 @@ integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0
     }
 
     async function setKodeMalam(){
-
-        let url = 'http://127.0.0.1:8000/api/kode/malam';
+        
+        let url = "{{url('api/kode/malam')}}";
 
         let response = await fetch(url);
 
@@ -369,8 +369,8 @@ integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0
     }
 
     async function updateKodeMalam(){
-
-        let url = 'http://127.0.0.1:8000/api/kode/update/malam';
+        
+        let url = "{{url('api/kode/update/malam')}}";
 
         let response = await fetch(url);
 
