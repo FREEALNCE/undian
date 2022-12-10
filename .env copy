@@ -11,7 +11,7 @@ MEDIA_PATH="http://127.0.0.1:8000/public"
 MEDIA_URL=http://127.0.0.1:8000 
 
 LOG_CHANNEL=stack
-
+https://github.com/FirqySutan17/prize-generator.git
 DB_CONNECTION=mysql
 DB_HOST=sql615.main-hosting.eu
 DB_PORT=3306
